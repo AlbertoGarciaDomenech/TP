@@ -1,0 +1,51 @@
+Nombre: Alberto García Doménech
+
+P3: Boton borrar cuerpo
+  -Creacion de nuevo Jbutton en ControlPanel(removeBody)
+  -Modificacion boton Start: deleteButton.setEnabled(false)
+  -Modificacion boton Stop(boolean enable) : deleteButton.setEnable(enable)
+  -Creacion nuevos metodos controller : 
+		public int getNumBodies()  //devuelve el numero de bodies que hay en el simulador
+		public List<String> getBodiesInfo() // devuelve una lista con los identificadores de los bodies
+		public void removeBody(String id) throws IllegalArgumentException // llama a simulator.removeBody y si no hay un body con ese id lanza una excepcion del tipo IllegalArgumentException
+  -Creacion nuevos metodos en PhysicsSimulator :
+		public int getNumBodies() // devuelve numero de bodies en el simulador
+		public List<String> getBodiesInfo() // devuelve una lista con los identificadores de los bodies
+		public void removeBody(String _id) throws IllegalArgumentException // recorre bodies buscando uno con el identificador _id y cuando lo encuentra lo borra y actualiza los observadores. Si no lo encuentra lanza excepcion
+  -Creacion nuevo metodo en interfaz PhysycsSimulator(onBodyDeleted) y en todos los observadores del simulador
+
+//DONE
+
+P1: Nuevo tipo de cuerpo
+  -Creacion nueva clase RocketBody que hereda de Body con dos nuevos atributos, _comb y _loss. Override de metodos move() y toJSON()
+  	@Override move:si tiene combustible se calcula la nueva posicion como posicion actual + velocidad*tiempo. Despues se resta el combustible de _loss
+		       si no, se calcula el movimiento normalmente, llamando a super(tiempo);
+	@Override toJSON: llama al super y luego pone los dos nuevos atributos: comb y loss
+  -Creacion nueva clase RocketBodyBuilder que hereda de Builder<Body>. Override de metodos createTheInstance y createData
+	@Override createTheInstance: coge los atributos de data. Dos nuevos atributos, comb y loss
+	@Override createData:  dos nuevos atributos(double): comb y loss
+  -Cambios en main:
+	Se añade en init RocketBodyBuilder a la lista de _bodyFactory
+
+//DONE
+
+P2: Nueva zona de peligro con radio r
+ -Cambios en main:
+	Se añaden nuevos atributos: (double) _r, _radioDefaultValue
+	Se añade en buildOption la posibilidad de añadir el parametro deadzone
+	Se añade un nuevo metodo: parseDeadZoneOption para que se llame cuando el simulador se inicialice en modo batch
+ -Creacion de una nueva clase tipo observer: DeadZoneCollision que implementa SimulatorObserver con todos los metodos de SimulatorObserver vacios excepto onRegister, onReset y OnAdvance()
+ -Creacion nueva clase BodyinRadio con atributo Body, boolean in radio y numero de veces que ha entrado en radio
+ -En onRegister se recorre la lista de bodies, inicializando _bodies y se calculara la distancia al centro.Si la distancia <= radio, se aumentara el numero de veces y el boolean que determinara si el cuerpo esta dentro o fuera
+ -En onReset lo mismo que en onRegister
+ -En metodo advance se calculara las posiciones respecto al centro:
+	si esta en radio y el boolean era falso se pone a cierto y se aumenta el numero de veces.
+	si esta en radio y el boolean era cierto no se hace nada
+	si no esta en radio y el boolean era falso no se hace nada
+	si no esta en radio y el boolena era cierto se pone a falso
+ - Cambios en main:
+	En startBatchMode  se añade a simulador el observador DeadZoneCollision
+	Al salir se llama al metodo que devuelve el string que se muestra por consola
+
+
+  

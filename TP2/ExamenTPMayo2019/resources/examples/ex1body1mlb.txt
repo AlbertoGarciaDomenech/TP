@@ -1,0 +1,92 @@
+{
+  "bodies": [
+ 
+    { 
+      "type" : "mlb",
+      "data" : {
+	             "id" : "mlb1",
+     	         "pos"  : [0.0e00,  4.5e10],
+     	         "vel"  : [1.0e04, 0.0e00],
+     			     "mass" : 1.5e30,
+               "freq": 5e3,
+               "factor": 20e-3
+     		   }		   
+    },
+    
+    { 
+      "type" : "mlb",
+      "data" : {
+	             "id" : "mlb2",
+     	         "pos"  : [3.0e00,  2.5e10],
+     	         "vel"  : [5.0e04, 0.0e00],
+     			     "mass" : 1.5e30,
+               "freq": 1e3,
+               "factor": 1e-3
+     		   }		   
+    },
+    
+     { 
+      "type" : "mlb",
+      "data" : {
+	             "id" : "mlb4",
+     	         "pos"  : [50.0e00,  -13.5e10],
+     	         "vel"  : [12.0e04, -15.0e00],
+     			  "mass" : 1.5e30,
+               "freq": 0.5e3,
+               "factor": 2e-3
+     		   }		   
+    },
+    
+    { 
+      "type" : "mlb",
+      "data" : {
+	             "id" : "mlb3",
+     	         "pos"  : [0.3e00,  0.0e10],
+     	         "vel"  : [2.0e04, 0.0e00],
+     			     "mass" : 1.5e30,
+               "freq": 1e3,
+               "factor": 1e-3
+     		   }		   
+    },
+    
+    { 
+      "type" : "basic",
+      "data" : {
+	             "id" : "b1",
+     	         "pos"  : [0.0e00, -4.5e10],
+     	         "vel"  : [-1.0e04, 0.0e00],
+     			 "mass" : 1.5e30
+     		   }		   
+    },
+    
+    { 
+      "type" : "basic",
+      "data" : {
+	             "id" : "bA",
+     	         "pos"  : [100.0e03, -200.5e08],
+     	         "vel"  : [-1.0e04, 3.0e00],
+     			 "mass" : 1.5e30
+     		   }		   
+    },
+    
+	{ 
+      "type" : "basic",
+      "data" : {
+	             "id" : "b3",
+     	         "pos"  : [13.0e00, -10.5e10],
+     	         "vel"  : [-1.0e04, -8.0e00],
+     			 "mass" : 1.5e30
+     		   }		   
+    },
+
+    { 
+      "type" : "basic",
+      "data" : {
+	             "id" : "b2",
+     	         "pos"  : [3.5e00, -1.3e10],
+     	         "vel"  : [-1.0e04, 0.0e00],
+     			 "mass" : 1.5e30
+     		   }		   
+    }
+ ]
+}
