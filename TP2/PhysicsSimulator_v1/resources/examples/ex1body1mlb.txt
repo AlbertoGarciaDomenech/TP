@@ -1,0 +1,38 @@
+{
+  "bodies": [
+ 
+    { 
+      "type" : "mlb",
+      "data" : {
+	             "id" : "mlb1",
+     	         "pos"  : [0.0e00,  4.5e10],
+     	         "vel"  : [1.0e04, 0.0e00],
+     			     "mass" : 1.5e30,
+               "freq": 1e3,
+               "factor": 1e-3
+     		   }		   
+    },
+    
+    { 
+      "type" : "mlb",
+      "data" : {
+	             "id" : "mlb2",
+     	         "pos"  : [3.0e00,  2.5e10],
+     	         "vel"  : [1.0e04, 0.0e00],
+     			     "mass" : 1.5e30,
+               "freq": 1e3,
+               "factor": 1e-3
+     		   }		   
+    },
+    
+    { 
+      "type" : "basic",
+      "data" : {
+	             "id" : "b2",
+     	         "pos"  : [0.0e00, -4.5e10],
+     	         "vel"  : [-1.0e04, 0.0e00],
+     			 "mass" : 1.5e30
+     		   }		   
+    }
+ ]
+}
