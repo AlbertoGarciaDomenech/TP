@@ -1,0 +1,8 @@
+Plants Vs Zombies 3.0
+
+cycle: 15
+sunCoins: 80
+level: INSANE
+remZombies: 5
+plantList: S:2:0:0:0, S:2:1:0:1, K:5:1:1:0, 
+zombieList: Z:5:1:5:0, W:8:2:7:3, W:8:0:7:2, Z:5:1:7:1, 
